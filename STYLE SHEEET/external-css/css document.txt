@@ -1,0 +1,39 @@
+html use to create basic webpage without better look and feel.
+reason:html has limited property and values.
+
+css: cascading style sheet , it has only property and values, that use to change look and feel of webpage
+
+how html and css work together
+   well design webpage=html(tags)+css(property and values)
+
+
+using how many method html and css combine together
+   or
+type of css
+   
+  1.  inline css
+  2. internal css
+  3. external css
+  4.import css
+
+
+
+list of property and values from css
+  
+ 1. height:[3 TYPES]
+    a>HEIGHT:100PX IT IS FIXED
+    b>MIN-HEIGHT: IT WILL DEPEND ON  CONTENT
+    C>height-auto: it is based on content if content is not their it will be dissipeared
+
+ 2. width:
+   to set wirdth of tag
+       4 types 
+       width:px it is fixed
+width:% it is responsive, according to device
+min-width:px/%  
+max-width:px/%
+ 3. background:
+ 4. float:TO CONVERT BLOCK TO INLINE 
+      1. LEFT: IT START FROM LEFT SIDE
+      2. RIGHT:IT START FROM RIGHT SIDE
+   

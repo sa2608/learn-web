@@ -1,0 +1,1607 @@
+<%@page import="com.amazin.plmsUI.controller.GlobalUrl"%>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style>
+.green {
+color: #33ce12;
+}
+
+.blue {
+
+}
+
+.purple {
+
+}
+
+.aero {
+
+}
+
+.marin {
+    box-shadow: 1px 0px 10px 0px rgb(223, 243, 255);
+    margin: 6px;
+    padding: 8px;
+    border: .5px solid #ffffff;
+    border-radius: 7px;
+}
+
+table.tile_info td p {
+margin: 0;
+line-height: 28px;
+font-size: 12px;
+margin-left: 28px;
+}
+
+tr {
+white-space: nowrap;
+}
+
+#tagtable2 {
+font-size: 13px;
+}
+
+#tagtable3 {
+font-size: 13px;
+}
+
+#myChart5 {
+width: 74% !important;
+height: auto !important;
+}
+/* #table1{
+    display:none;
+    } */
+</style>
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <!-- <div class="x_title">
+                        <h2><i class="fa fa-bars"></i> Device Master<small></small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#">Settings 1</a>
+                                  </li>
+                                  <li><a href="#">Settings 2</a>
+                                  </li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div> -->
+                    <div class="x_content">
+
+
+                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Vehicle Status Dashboard</a>
+                                </li>
+                                <li role="presentation"  id ="anab"class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Raw Material Dashboard</a>
+                                </li>
+                                <!-- <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Delete Tolerance</a>
+                                </li> -->
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+<!-- <div class="x_panel"> -->
+<div class="x_title">
+<h2>
+<i class="fa fa-bars"></i>Vehicle Status Dashboard<small></small>
+</h2>
+<ul class="nav navbar-right panel_toolbox">
+<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+</li>
+<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a> <!-- <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Settings 1</a>
+                                        </li>
+                                        <li><a href="#">Settings 2</a>
+                                        </li>
+                                      </ul> --></li>
+<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+</ul>
+<div class="clearfix"></div>
+<div class="x_panel">
+<div class="row">
+<!-- <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+<label class="control-label col-md-12 col-sm-12 col-xs-12" for="first-name" style="    text-align: left;"><span id="mov" style="color:red"></span>Vendor/Transporter Wise<span style="color: red">*</span> <span class="required"></span>
+</label>
+<select id="vendor" class="form-control getRecord">
+                              <option value="contractor">Contractor Wise</option>
+                              <option value="weighbridge">Weigh Bridge Wise</option>
+                              <option value="exception">Exception</option>
+</select>
+</div> -->
+        <!--  <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                                    <label class="control-label" for="first-name"> <span id="unm3" style="color:red"></span>Select From Date<span class="required"></span>
+                                                    </label>
+                                                    <input type="text"  style="border-radius: 12px" id="fromdate"  class="form-control getRecord">
+
+
+                                                </div>
+<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                                    <label class="control-label" for="first-name"> <span id="unm2" style="color:red"></span>Select To Date <span class="required"></span>
+                                                    </label>
+
+                                                    <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                                    <input type="text" style=" border-radius: 12px" id="todate"  class="form-control getRecord">
+
+                                                </div> -->
+</div>
+
+<div class="row">
+
+    <div class="col-md-12 col-xs-12" id="contractorDiv" style="display: none;">
+
+               <div class='marin' style="margin-top: 10px;">
+                  <!--  <center><h2> Vendor/Transporter Wise Details</h2></center>
+ -->
+
+                   <canvas id="myChart5"></canvas>
+               </div>
+
+
+
+           </div>
+           
+           <div class="col-md-12 col-xs-12" id="weighbridgeDiv" style="display: none;">
+
+               <div class='marin' style="margin-top: 10px;">
+                   <center><h2> Weighbridge Wise Details</h2></center>
+
+
+                   <canvas id="myChart6"></canvas>
+               </div>
+               
+             
+           </div>
+          <!--  <h3>Total Trips-<span id="tripCount" class="count" >0</span></h3>
+<h3>Total Vehicles-<span class="count"  id="vehicleCount">0</span></h3> -->
+
+
+</div>
+</div>
+</div>
+<!-- </div> -->
+</div>  
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                                  <div class="col-md-12 col-sm-12 col-xs-12">
+<div class="x_panel" id="graph">
+
+<div class="x_content">
+<br>
+
+<div class="col-md-6 col-sm-12 col-xs-12 ">
+<div class='marin'>
+<center>
+<h2>Yard In</h2>
+</center>
+<canvas class="canvasDoughnut" id="myPieChartYI"
+height="52%" width="100%"></canvas>
+</div>
+</div>
+
+<div class="col-md-6 col-sm-12 col-xs-12 ">
+<div class='marin'>
+<center>
+<h2>Check In</h2>
+</center>
+<canvas class="canvasDoughnut" id="myPieChartCI"
+height="52%" width="100%""></canvas>
+</div>
+</div>
+
+
+<div class="col-md-6 col-sm-12 col-xs-12 ">
+<div class='marin'>
+<center>
+<h2>Yard Out</h2>
+</center>
+<canvas class="canvasDoughnut" id="myPieChartYO"
+height="52%" width="100%""></canvas>
+</div>
+</div>
+<div class="col-md-6 col-sm-12 col-xs-12 ">
+<div class='marin'>
+<center>
+<h2>Weighbridge</h2>
+</center>
+<canvas class="canvasDoughnut" id="myPieChartWB"
+height="52%" width="100%""></canvas>
+</div>
+</div>
+
+<div class="col-md-6 col-sm-12 col-xs-12 ">
+<div class='marin'>
+<center>
+<h2>Unloading</h2>
+</center>
+<canvas class="canvasDoughnut" id="myPieChartUN"
+height="52%" width="100%""></canvas>
+</div>
+</div>
+<div class="col-md-6 col-sm-12 col-xs-12 ">
+<div class='marin'>
+<center>
+<h2>Weight Out</h2>
+</center>
+<canvas class="canvasDoughnut" id="myPieChartWO"
+height="52%" width="100%""></canvas>
+</div>
+</div>
+
+<div class="col-md-6 col-sm-12 col-xs-12 ">
+<div class='marin'>
+<center>
+<h2>Gate In</h2>
+</center>
+<canvas class="canvasDoughnut" id="myPieChartGI"
+height="52%" width="100%""></canvas>
+</div>
+</div>
+<!-- <table class="" style="width:100%">
+                        <tbody><tr>
+                          <th style="width:37%;">
+                            <p></p>
+                          </th>
+                          <th>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class=""></p>
+                            </div>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td style="width:46%"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                            <canvas class="canvasDoughnut" height="175" width="175" style="margin: 15px 10px 10px 0px;width: 140px;height: 140px;"></canvas>
+                          <canvas class="canvasDoughnut" id="myPieChart" height="261px;" width="238px;"></canvas>
+                          </td>
+                          <td>
+                            <table class="tile_info">
+                              <tbody ><tr>
+                                <td>
+                                  <p><i class="fa fa-square green"></i>Approved Vehicle </p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <p><i class="fa fa-square blue"></i>Vehicle Approved After Reject</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <p><i class="fa fa-square purple"></i>Vehicle Rejected After Reject </p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <p><i class="fa fa-square aero"></i>Vehicle Rejected </p>
+                                </td>
+                              </tr>
+
+                            </tbody></table>
+                          </td>
+                        </tr>
+                      </tbody></table> -->
+<!-- <div class="chart-container">
+                                                            <div class="pie-chart-container">
+                                                                <canvas class="canvasDoughnut" id="myPieChart" height="50%" width="100%"></canvas>
+                                                            </div>
+                                                        </div> -->
+
+<!-- <div class="col-md-3 col-sm-12 col-xs-12 "
+style="margin-top: 40px"></div> -->
+
+
+<!-- <canvas style="display:none" id="createCurrYearHccGapChart2" height="370" width="700"></canvas> -->
+
+</div>
+</div>
+</div>
+
+                                 
+                                   </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                                    3
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header" style=" background: #ffca35;margin-left: 0px;margin-right: -0.5px;border-radius: 5px 5px 0px 0px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="color:black">View Info</h4>
+            </div>
+            <div class="modal-body" id="mdl3">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="editModel" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style=" background: #ffca35;margin-left: 0px;margin-right: -0.5px;border-radius: 5px 5px 0px 0px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="color:black">Update Device Master</h4>
+            </div>
+            <div class="modal-body" id="mdll">
+                <div class="x_content">
+                    <form id="mdl2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                        <!-- <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                <label class="control-label col-md-12 col-sm-12 col-xs-12" for="first-name">Code* <span class="required"></span>
+                                </label>
+                                <select class="form-control">
+                                        <option>Choose Type</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                      </select>
+                              </div>
+                         -->
+                        <!-- <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                           <label class="control-label col-md-12 col-sm-12 col-xs-12" for="first-name"><span id="unm" style="color:red"></span>Code* <span class="required"></span>
+                           </label>
+                           <input type="text" placeholder="Code" class="form-control">
+
+                         </div>
+                         <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                               <label class="control-label col-md-12 col-sm-12 col-xs-12" for="first-name">Name* <span class="required"></span>
+                               </label>
+                               <input type="text" placeholder="Name" class="form-control">
+                             </div>
+                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                   <label class="control-label col-md-12 col-sm-12 col-xs-12" for="first-name">Description* <span class="required"></span>
+                                   </label>
+                                   <input type="text" placeholder="Description" class="form-control">
+                                 </div>
+                     <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                             <label class="control-label col-md-12 col-sm-12 col-xs-12" for="first-name">Device Type* <span class="required"></span>
+                             </label>
+                             <select id="msel" class="form-control"></select>
+                           </div>
+                           <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                               <label class="control-label col-md-12 col-sm-12 col-xs-12" for="first-name">Device Sub Type* <span class="required"></span>
+                               </label>
+                               <select id="msel2" class="form-control"></select>
+                           </div> -->
+                        <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                            <label class="control-label col-md-12 col-sm-12 col-xs-12" for="type"><span id="sp1" style="color:red"></span> IP Address<span class="required"></span>
+                            </label>
+                            <input type="text" id="type" class="form-control ip_address" data-mask="999.999.999.999" maxlength="15" autocomplete="off">
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                            <label class="control-label col-md-12 col-sm-12 col-xs-12" for="port2"><span id="sp2" style="color:red"></span> Port<span class="required"></span>
+                            </label>
+                            <input type="text" id="port2" class="form-control" value="5000" disabled onkeypress="return IsNumeric2(event);" ondrop="return false;" onpaste="return false;" maxlength="4" >
+                            <span id="error2" style="color: Red; display: none">* Input numbers only</span>
+                        </div>
+                        <script type="text/javascript">
+                            var specialKeys = new Array();
+                            specialKeys.push(8); //Backspace
+                            function IsNumeric2(e) {
+                                var keyCode = e.which ? e.which : e.keyCode
+                                var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+                                document.getElementById("error2").style.display = ret ? "none" : "inline";
+                                return ret;
+                            }
+
+                        </script>
+
+
+                        <div class="form-group">
+                            <div class="col-md-5 col-sm-12 col-xs-12 col-md-offset-5">
+                                <button type="button" id="mdledit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="doughnut1" role="dialog">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header"
+style="background: #ffca35; margin-left: 0px; margin-right: -0.5px; border-radius: 5px 5px 0px 0px;">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+<h4 class="modal-title" style="color: black" id="heading"></h4>
+</div>
+<div class="modal-body" id="mdl2">
+<div id="table2">
+<div id="datatable_wrapper"
+class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+<div class="row">
+<div class="col-sm-4">
+<div class="dataTables_length" id="datatable_length"></div>
+</div>
+<div class="col-sm-2">
+<div class="dataTables_length" id="datatable_length"></div>
+</div>
+<div class="col-sm-6"></div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="tagtable_wrapper"
+class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+<div id="tagtable_wrapper"
+class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+<div id="tagtable_filter"
+class="dataTables_filter table-responsive"></div>
+<table id="tagtable2"
+class="table dataTable table-bordered no-footer table-hover"
+role="grid" aria-describedby="tagtable_info">
+<thead>
+<tr role="row">
+<th class="sorting_asc" tabindex="0"
+aria-controls="datatable" rowspan="1" colspan="1"
+aria-label="Sr. No.: activate to sort column descending"
+style="width: 150px;" aria-sort="ascending">PO Number</th>
+<th class="sorting_asc" tabindex="0"
+aria-controls="datatable" rowspan="1" colspan="1"
+aria-label="Sr. No.: activate to sort column descending"
+style="width: 150px;" aria-sort="ascending">Supplier
+</th>
+
+<!-- <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Vehicle Type: activate to sort column ascending" style="width: 107px;">Gate Pass No.</th> -->
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Movement Type: activate to sort column ascending"
+style="width: 150px;">Transporter Code</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">Source</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">Vehicle No.</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">Parking lot No.</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">YardIn Date & Time</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">CI Date & Time</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">GE No.</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">GI Date & Time</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">WI Date & Time</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">Unloading Date & Time</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">WO Date & Time</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">Weight Gross</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">Weight Tare</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">GateOut Date & Time</th>
+<th class="sorting" tabindex="0" aria-controls="datatable"
+rowspan="1" colspan="1"
+aria-label="Tag SR.: activate to sort column ascending"
+style="width: 150px;">Net Qty</th>
+
+
+</tr>
+
+</thead>
+<tbody id="tbody1" class="tb1">
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+<script src="js/service.js"></script>
+<script src="js/chart.min.js"></script>
+<script type="text/javascript">
+$("#fromdate").daterangepicker({
+    singleDatePicker: true,
+    "timePicker": true,
+    "timePicker24Hour": true,
+    showDropdowns: true,
+    locale: {
+        format: 'YYYY-MM-DD HH:mm'
+        //format: 'YYYY-MM-DD'
+    },
+    //startDate:moment().startOf('month'),
+    startDate:moment(Date.now()).format('YYYY-MM-DD') ,
+    maxDate: moment()
+});
+$("#todate").daterangepicker({
+    singleDatePicker: true,
+    "timePicker": true,
+    "timePicker24Hour": true,
+    showDropdowns: true,
+    endDate:moment(),
+    locale: {
+        format: 'YYYY-MM-DD HH:mm'
+        //format: 'YYYY-MM-DD'
+    },
+    startDate:moment(Date.now()).format('YYYY-MM-DD HH:mm') ,
+    maxDate: moment()
+});
+   
+
+
+   /* $.fn.dataTable.ext.errMode = 'none';
+
+    $('#userVehicle').on( 'error.dt', function ( e, settings, techNote, message ) {
+        console.log( 'An error has been reported by DataTables: ', message );
+    }).DataTable({
+        /!*processing: true,
+        "language": {
+
+
+            "processing": "<img src='images/loader3.gif'>",
+        },*!/
+        "columnDefs": [
+            {"className": "dt-center", "targets": "_all"}
+        ],
+        //"scrollY":400,
+        "scrollX": true,
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'pdf', 'print'
+        ]
+    });*/
+
+    var datap = JSON.stringify(userData.mapUsersPlantList);
+    //console.log("plant"+datap);
+    datap = JSON.parse(datap);
+    //   getAllTransporter();
+   /* $.each(datap, function (i, data) {
+        $('#sel').append($('<option/>').attr("value", data.masterPlantByPlantId.id).text(data.masterPlantByPlantId.name));
+    });*/
+    try {
+        if (userData.mapUsersPlantList[0].transporterId) {
+            $('#plantt').hide();
+            //getAllTransporter();
+            var tname = JSON.stringify(userData.mapUsersPlantList[0].masterTransporterByTransporterId.name);
+            var tid = JSON.stringify(userData.mapUsersPlantList[0].masterTransporterByTransporterId.id);
+            // console.log("plant"+JSON.stringify(userData.mapUsersPlantList[0].masterTransporterByTransporterId));
+
+            $('#transp').append($('<option/>').attr("value", tid).text(tname));
+            $("#transp").prop('disabled', true);
+            // document.getElementById('transp').readOnly = true;
+            /* $.each(datap, function(i, data) {
+                 $('#transp').append($('<option/>').attr("value", data.masterTransporterByTransporterId.id).text(data.masterTransporterByTransporterId.name));
+             });*/
+        } else {
+            /*  datap = JSON.parse(datap);
+              //   getAllTransporter();
+              $.each(datap, function (i, data) {
+                  $('#sel').append($('<option/>').attr("value", data.masterPlantByPlantId.id).text(data.masterPlantByPlantId.name));
+              });*/
+
+        }
+    }
+    catch(err){
+
+       // $('#sel').append($('<option/>').attr("value", userData.masterPlantByMasterPlantId.id).text(userData.masterPlantByMasterPlantId.name));
+    }
+
+
+   
+
+
+var old_data;
+/* if(openurl =='yardInDashboard'){
+interval = setInterval(function(){ yardIn();
+console.log(openurl);}, 300000);
+
+} */
+
+
+
+
+
+$(".getRecord").change(function() {
+getGraph();
+})
+
+var totalVehicleCount=0;
+var totalTripCount=0;
+
+getGraph();
+
+function getGraph(){
+
+var json = {
+      /*  "type":$("#vendor").val(),
+       "start_date": $("#fromdate").val(),
+       "end_date":$("#todate").val(),
+       "master_plant_id":21 */
+"master_plant_id":21
+   }
+var dd = 1;
+if(dd==1){
+
+$('#contractorDiv').show();
+$('#weighbridgeDiv').hide();
+
+
+   $.ajax({
+       url: "<%= GlobalUrl.maxCountStageWise%>",
+       type: 'POST',
+       dataType: 'json',
+       contentType: "application/json",
+       data: JSON.stringify(json),
+       async: false,
+       success: function (data2) {
+       var data = data2;
+       var firstG = [];
+       var secondG = [];
+       var vehicle = [];
+       var vcolor = [];
+     //  vehicle_count_max
+     //  var weighbridge = [];
+     debugger
+   //  totalTripCount=0;
+   //  totalVehicleCount=0;
+       if(data.length > 0){
+    	  
+       for (var i = 0; i < data.length; i++){
+ 		if(data[i].stage_name == "Pre-Yard-In"){
+ 			firstG.push(data[i].vehicle_count_current);
+ 			 vehicle.push(data[i].stage_name); 
+ 			 var perc ="";
+ 			perc = ((data[i].vehicle_count_max/100) * 80).toFixed(3);
+            secondG.push(perc);
+    	   }
+       // totalTripCount=totalTripCount+parseInt(data[i].Trip_Count);
+       // totalVehicleCount=totalVehicleCount+parseInt(data[i].Vehicle_Count);
+        
+       // secondG.push(data[i].vehicle_count_max);
+      
+       
+        
+        //var per = (data[i].vehicle_count_max * 80)
+      
+        /*  if(data[i].vehicle_count_max){
+                perc=" ";
+               }else{ */
+               
+              // }
+        /*  if(perc < data[i].vehicle_count_current ){
+        vcolor.push("red");
+        }else{
+        vcolor.push("green");
+        } */
+        /* if($("#vendor").val()=='contractor'){
+        console.log("inside if")
+        transporter.push(data[i].transporter_name);
+        }else{
+        transporter.push(data[i].weighbridge_name);
+        console.log("inside else")
+        //}*/
+       }
+       
+       for (var i = 0; i < data.length; i++){
+    		if(data[i].stage_name == "Yard-In"){
+    			firstG.push(data[i].vehicle_count_current);
+    			 vehicle.push(data[i].stage_name); 
+    			 var perc ="";
+    			perc = ((data[i].vehicle_count_max/100) * 80).toFixed(3);
+               secondG.push(perc);
+       	   }
+       }
+
+       
+       for (var i = 0; i < data.length; i++){
+    		if(data[i].stage_name == "CheckI-IN"){
+    			firstG.push(data[i].vehicle_count_current);
+    			 vehicle.push(data[i].stage_name); 
+    			 var perc ="";
+    			perc = ((data[i].vehicle_count_max/100) * 80).toFixed(3);
+               secondG.push(perc);
+       	   }
+       }
+
+       
+       for (var i = 0; i < data.length; i++){
+    		if(data[i].stage_name == "Yard-Out"){
+    			firstG.push(data[i].vehicle_count_current);
+    			 vehicle.push(data[i].stage_name); 
+    			 var perc ="";
+    			perc = ((data[i].vehicle_count_max/100) * 80).toFixed(3);
+               secondG.push(perc);
+       	   }
+       }
+
+       
+       for (var i = 0; i < data.length; i++){
+    		if(data[i].stage_name == "Gate-In"){
+    			firstG.push(data[i].vehicle_count_current);
+    			 vehicle.push(data[i].stage_name); 
+    			 var perc ="";
+    			perc = ((data[i].vehicle_count_max/100) * 80).toFixed(3);
+               secondG.push(perc);
+       	   }
+       }
+
+
+       
+       for (var i = 0; i < data.length; i++){
+    		if(data[i].stage_name == "Weight-In"){
+    			firstG.push(data[i].vehicle_count_current);
+    			 vehicle.push(data[i].stage_name); 
+    			 var perc ="";
+    			perc = ((data[i].vehicle_count_max/100) * 80).toFixed(3);
+               secondG.push(perc);
+       	   }
+       }
+
+       
+      
+
+       
+       for (var i = 0; i < data.length; i++){
+    		if(data[i].stage_name == "Unloading"){
+    			firstG.push(data[i].vehicle_count_current);
+    			 vehicle.push(data[i].stage_name); 
+    			 var perc ="";
+    			perc = ((data[i].vehicle_count_max/100) * 80).toFixed(3);
+               secondG.push(perc);
+       	   }
+       }
+
+       
+       for (var i = 0; i < data.length; i++){
+    		if(data[i].stage_name == "Weight-Out"){
+    			firstG.push(data[i].vehicle_count_current);
+    			 vehicle.push(data[i].stage_name); 
+    			 var perc ="";
+    			perc = ((data[i].vehicle_count_max/100) * 80).toFixed(3);
+               secondG.push(perc);
+       	   }
+       }
+
+       
+       
+       }
+       //console.log("total vehicle count"+totalVehicleCount);
+       //console.log("total trip count"+totalTripCount);
+       //document.getElementById('vehicleCount').innerHTML=totalVehicleCount;
+       //document.getElementById('tripCount').innerHTML=totalTripCount;
+       //var Chart2=document.getElementById("myChart5").getContext("2d");
+    //   var Chart3 = new Chart(Chart2, { type: 'bar', data: {}, options: {} });
+    //  myChart.update();
+    //   if($("#vendor").val()=='contractor'){
+    //var myChart = new Chart(grapharea, { type: 'bar', data: barData, options: barOptions });
+    
+    var myChart = new Chart(document.getElementById("myChart5"), {
+        type: 'line',
+        data: {
+        labels: vehicle,
+          //labels: certifiedCapacityArray,
+         
+        /*   datasets: [
+              {
+                  label: "Vehicle Count",
+                  bacallPoDetails.push(data)kgroundColor: colorArray,
+                  data: countData,
+              }
+          ] */
+         
+          datasets: [
+              {
+                  label: "Trip",
+                  backgroundColor: "#ffff",
+                  data: firstG,
+                  borderColor: "green"
+              },
+              {
+                  label: "Vehicle",
+                 backgroundColor: "#ffff",
+                  data: secondG,
+                  borderColor: "red"
+              },
+             /*  {
+                  label: "Groucho",
+                  fillColor: "green",
+                  data: [7,2]
+              } */
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+              display: true,
+              text: ''
+          },
+          elements: {
+          line: {
+          fillColor : "",
+          tension: 0 // disables bezier curves
+          }
+          }
+        }
+        });
+      /*  }else if($("#vendor").val()=='contractor')){
+       
+       } */
+     
+       },
+       error:function(err)  {
+       }
+       })
+
+}
+else{
+
+$('#contractorDiv').hide();
+$('#weighbridgeDiv').show();
+
+$.ajax({
+       url: "<%= GlobalUrl.allDashBoard%>",
+       type: 'POST',
+       dataType: 'json',
+       contentType: "application/json",
+       data: JSON.stringify(json),
+       async: false,
+       success: function (data2) {
+       var data = data2;
+       var firstG = [];
+       var secondG = [];
+       var transporter = [];
+     //  var weighbridge = [];
+     
+     totalTripCount=0;
+     totalVehicleCount=0;
+       if(data.length > 0){
+       for (var i = 0; i < data.length; i++){
+        firstG.push(data[i].Trip_Count);
+        secondG.push(data[i].Vehicle_Count);
+        totalTripCount=totalTripCount+parseInt(data[i].Trip_Count);
+        totalVehicleCount=totalVehicleCount+parseInt(data[i].Vehicle_Count);
+        /* if($("#vendor").val()=='contractor'){
+        console.log("inside if")
+        transporter.push(data[i].transporter_name);
+        }else{
+        transporter.push(data[i].weighbridge_name);
+        console.log("inside else")
+        } */
+       }
+       }
+       console.log("total vehicle count"+totalVehicleCount);
+       console.log("total trip count"+totalTripCount);
+       document.getElementById('vehicleCount').innerHTML=totalVehicleCount;
+       document.getElementById('tripCount').innerHTML=totalTripCount;
+       //var Chart2=document.getElementById("myChart5").getContext("2d");
+    //   var Chart3 = new Chart(Chart2, { type: 'bar', data: {}, options: {} });
+    //  myChart.update();
+    //   if($("#vendor").val()=='contractor'){
+    //var myChart = new Chart(grapharea, { type: 'bar', data: barData, options: barOptions });
+    var myChart = new Chart(document.getElementById("myChart6"), {
+        type: 'bar',
+        data: {
+        labels: transporter,
+          //labels: certifiedCapacityArray,
+         
+        /*   datasets: [
+              {
+                  label: "Vehicle Count",
+                  bacallPoDetails.push(data)kgroundColor: colorArray,
+                  data: countData,
+              }
+          ] */
+         
+          datasets: [
+              {
+                  label: "Trip",
+                  backgroundColor: "#ffcd56",
+                  data: firstG
+              },
+              {
+                  label: "Vehicle",
+                  backgroundColor: "#36a2eb",
+                  data: secondG
+              },
+             /*  {
+                  label: "Groucho",
+                  fillColor: "green",
+                  data: [7,2]
+              } */
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+              display: true,
+              text: ''
+          }
+        }
+        });
+      /*  }else if($("#vendor").val()=='contractor')){
+       
+       } */
+     
+       },
+       error:function(err)  {
+       }
+       })
+
+}
+
+
+}
+
+function loadInfoPopup(){
+$("#myModal1").modal("show");
+var eachrow = "<div class='card' style='width: 267px;'><ul class='list-group list-group-flush'><li style='background-color: rgb(255, 20, 0); color:white;' class='list-group-item'<span style='color:#4b92e1'>"
+     +"DO No/PO No Not available for OutBound Trip for Transporter.</span></li><li style='background-color: green; color:white;' class='list-group-item'<span style='color:#4b92e1'>DO No/PO No available for OutBound Trip."
+     +"</span></li><li style='background-color: rgb(255, 125, 1); color:white;' class='list-group-item'<span style='color:#4b92e1'>"
+     +"DO No/PO No and Transporter Not available for OutBound Trip.</span></li><li class='list-group-item'<span style='color:#4b92e1'>"
++"Trip type Inbound.</span></li></ul></div>";
+
+$('#mdl3').html(eachrow);
+}
+
+
+//for Raw mat
+
+$("#back").click(function() {
+        $('#table1').hide('slow');
+        $('#graph').show('slow');
+    });
+
+    var chart1;
+    var chart2;
+    var chart22;
+    var chart3;
+    var chart4;
+    var chart5;
+    var chart6;
+
+    $("#fromdate").daterangepicker({
+        singleDatePicker: true,
+        "timePicker": true,
+        "timePicker24Hour": true,
+        showDropdowns: true,
+        locale: {
+            format: 'YYYY-MM-DD HH:mm:ss'
+            //format: 'YYYY-MM-DD'
+        },
+        //startDate:moment().startOf('month'),
+        // maxDate: moment()
+    });
+    $("#todate").daterangepicker({
+        singleDatePicker: true,
+        "timePicker": true,
+        "timePicker24Hour": true,
+        showDropdowns: true,
+        endDate:moment(),
+        locale: {
+            format: 'YYYY-MM-DD HH:mm:ss'
+            //format: 'YYYY-MM-DD'
+        },
+        //maxDate: moment()
+    });
+
+    intializeCharts();
+
+
+    function intializeCharts()
+    {
+        /* $(".tb1").empty();
+        chart1 = new Chart($("#myChart"),{
+            type: 'bar',
+            /*data: {},*/
+          //  options: {}
+       // }); */
+        chart1 = new Chart($("#myPieChartYI"),{
+            type: 'doughnut',
+            /*data: {},*/
+            options: {
+            responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    duration: 0
+                },
+                hover: {
+                    animationDuration: 0
+                },
+                responsiveAnimationDuration: 0}
+        });
+
+        chart2 = new Chart($("#myPieChartCI"),{
+            type: 'doughnut',
+            /*data: {},*/
+            options: {responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    duration: 0
+                },
+                hover: {
+                    animationDuration: 0
+                },
+                responsiveAnimationDuration: 0}
+        });
+        
+
+
+        chart22 = new Chart($("#myPieChartYO"),{
+            type: 'doughnut',
+            /*data: {},*/
+            options: {responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    duration: 0
+                },
+                hover: {
+                    animationDuration: 0
+                },
+                responsiveAnimationDuration: 0}
+        });
+        chart3 = new Chart($("#myPieChartWB"),{
+            type: 'doughnut',
+            /*data: {},*/
+            options: {responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    duration: 0
+                },
+                hover: {
+                    animationDuration: 0
+                },
+                responsiveAnimationDuration: 0}
+        });
+
+        chart4 = new Chart($("#myPieChartUN"),{
+            type: 'doughnut',
+            /*data: {},*/
+            options: {responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    duration: 0
+                },
+                hover: {
+                    animationDuration: 0
+                },
+                responsiveAnimationDuration: 0}
+        });
+
+        chart5 = new Chart($("#myPieChartWO"),{
+            type: 'doughnut',
+            /*data: {},*/
+            options: {responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    duration: 0
+                },
+                hover: {
+                    animationDuration: 0
+                },
+                responsiveAnimationDuration: 0}
+        });
+
+        chart6 = new Chart($("#myPieChartGI"),{
+            type: 'doughnut',
+            /*data: {},*/
+            options: {responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    duration: 0
+                },
+                hover: {
+                    animationDuration: 0
+                },
+                responsiveAnimationDuration: 0}
+        });
+       /*  chart5 = new Chart($("#myChart5"),{
+            type: 'bar',
+            //data: {},
+            options: {}
+        }); */
+        //intializeChart1();
+        //intializeChart3();
+        //intializeChart4("_","_","_");
+        //intializeChart5("_");
+        intializeChart2();
+    }
+
+
+    function intializeChart2()
+    {
+        $('#tagtable2').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'pdf', 'print'
+            ],
+            "oSearch": {"bSmart": false}
+        });
+        var tagtable2 = $('#tagtable2').DataTable();
+
+        $.fn.dataTable.ext.errMode = 'none';
+
+        $('#tagtable2').on( 'error.dt', function ( e, settings, techNote, message ) {
+            console.log( 'An error has been reported by DataTables: ', message );
+        } ).DataTable({
+
+            //scrollY:'60vh',
+            "pageLength": 6,
+
+            "scrollX": true,
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'pdf', 'print'
+            ]
+        });
+//$("")
+        var json;
+
+      //  json ={"masterPlantList":[{"id":plantId}] };
+       json ={"plant_id":"21"};
+
+        var data = callajaxasJson("<%=GlobalUrl.getrawMaterials360DashBoard%>",json);
+      //  var data2 = [parseFloat(data.data.countAVehicle),parseFloat(data.data.countRVehicle),parseFloat(data.data.countRAVehicle),parseFloat(data.data.countRRVehicle)];
+var vehicleCount = [];
+var material = [];
+var stages = "";
+
+var materialCI = [];
+var vehicleCountCI = [];
+var stagesCI = "";
+
+var materialYO = [];
+var vehicleCountYO = [];
+var stagesYO = "";
+
+var materialW = [];
+var vehicleCountW = [];
+var stagesW = "";
+
+var materialU = [];
+var vehicleCountU = [];
+var stagesU = "";
+
+var materialWO = [];
+var vehicleCountWO = [];
+var stagesWO = "";
+
+var materialG = [];
+var vehicleCountG = [];
+var stagesG = "";
+debugger
+      for (var i = 0; i < data.length; i++)
+      {
+    	  
+    	  
+    //  }
+      if(data[i].stage_code == "YI"){
+     material.push(data[i].group_common_name);
+     vehicleCount.push(data[i].vehicle_count_current);
+     stages = data[i].stage_name;
+     stageyid = data[i].stage_id;
+    /*  var table1data2 = data.data.triplistAVehicle;
+          var table1data3 = data.data.triplistRAVehicle;
+          var table1data4 = data.data.triplistRVehicle;
+          var table1data5 = data.data.triplistRAVehicle; */
+          }
+     
+
+      if(data[i].stage_code == "CI"){
+          materialCI.push(data[i].group_common_name);
+          vehicleCountCI.push(data[i].vehicle_count_current);
+         stagesCI = data[i].stage_name;
+         stageciid = data[i].stage_id;
+        /*  var table1data2 = data.data.triplistAVehicle;
+              var table1data3 = data.data.triplistRAVehicle;
+              var table1data4 = data.data.triplistRVehicle;
+              var table1data5 = data.data.triplistRAVehicle; */
+              }
+      
+
+      if(data[i].stage_code == "YO"){
+          materialYO.push(data[i].group_common_name);
+          vehicleCountYO.push(data[i].vehicle_count_current);
+         stagesYO = data[i].stage_name;
+         stageyoid = data[i].stage_id;
+        /*  var table1data2 = data.data.triplistAVehicle;
+              var table1data3 = data.data.triplistRAVehicle;
+              var table1data4 = data.data.triplistRVehicle;
+              var table1data5 = data.data.triplistRAVehicle; */
+              }
+      if(data[i].stage_code == "WB"){
+          materialW.push(data[i].group_common_name);
+          vehicleCountW.push(data[i].vehicle_count_current);
+         stagesW = data[i].stage_name;
+         stagewbid = data[i].stage_id;
+        /*  var table1data2 = data.data.triplistAVehicle;
+              var table1data3 = data.data.triplistRAVehicle;
+              var table1data4 = data.data.triplistRVehicle;
+              var table1data5 = data.data.triplistRAVehicle; */
+              }
+      if(data[i].stage_code == "UL"){
+          materialU.push(data[i].group_common_name);
+          vehicleCountU.push(data[i].vehicle_count_current);
+         stagesU = data[i].stage_name;
+         stageunid = data[i].stage_id;
+        /*  var table1data2 = data.data.triplistAVehicle;
+              var table1data3 = data.data.triplistRAVehicle;
+              var table1data4 = data.data.triplistRVehicle;
+              var table1data5 = data.data.triplistRAVehicle; */
+              }
+      if(data[i].stage_code == "WO"){
+          materialWO.push(data[i].group_common_name);
+          vehicleCountWO.push(data[i].vehicle_count_current);
+         stagesWO = data[i].stage_name;
+         stagewoid = data[i].stage_id;
+        /*  var table1data2 = data.data.triplistAVehicle;
+              var table1data3 = data.data.triplistRAVehicle;
+              var table1data4 = data.data.triplistRVehicle;
+              var table1data5 = data.data.triplistRAVehicle; */
+              }
+
+      if(data[i].stage_code == "GI"){
+          materialG.push(data[i].group_common_name);
+          vehicleCountG.push(data[i].vehicle_count_current);
+         stagesG = data[i].stage_name;
+         stagegiid = data[i].stage_id;
+        /*  var table1data2 = data.data.triplistAVehicle;
+              var table1data3 = data.data.triplistRAVehicle;
+              var table1data4 = data.data.triplistRVehicle;
+              var table1data5 = data.data.triplistRAVehicle; */
+              }
+               }
+       
+        console.log(vehicleCount);
+        var pieData = {
+            datasets: [{
+                data:vehicleCount,
+                backgroundColor:['#33ce12','#ffcd56','#ff6384','#36a2eb']
+            }],
+            labels:  material,
+            /*labels: []*/
+        };
+       
+          console.log(vehicleCountCI+"???");
+          var pieDataCI = {
+              datasets: [{
+                  data:vehicleCountCI,
+                  backgroundColor:['#33ce12','#ffcd56','#ff6384','#36a2eb']
+              }],
+              labels:  materialCI,
+              /*labels: []*/
+          };
+
+          console.log(vehicleCountYO);
+          var pieDataYO = {
+              datasets: [{
+                  data:vehicleCountYO,
+                  backgroundColor:['#33ce12','#ffcd56','#ff6384','#36a2eb']
+              }],
+              labels:  materialYO,
+              /*labels: []*/
+          };
+
+          console.log(vehicleCountW);
+          var pieDataW = {
+              datasets: [{
+                  data:vehicleCountW,
+                  backgroundColor:['#33ce12','#ffcd56','#ff6384','#36a2eb']
+              }],
+              labels:  materialW,
+              /*labels: []*/
+          };
+       
+          console.log(vehicleCountU);
+          var pieDataU = {
+              datasets: [{
+                  data:vehicleCountU,
+                  backgroundColor:['#33ce12','#ffcd56','#ff6384','#36a2eb']
+              }],
+              labels:  materialU,
+              /*labels: []*/
+          };
+       
+          console.log(vehicleCountWO);
+          var pieDataWO = {
+              datasets: [{
+                  data:vehicleCountWO,
+                  backgroundColor:['#33ce12','#ffcd56','#ff6384','#36a2eb']
+              }],
+              labels:  materialWO,
+              /*labels: []*/
+          };
+
+
+          console.log(vehicleCountG);
+          var pieDataG = {
+              datasets: [{
+                  data:vehicleCountG,
+                  backgroundColor:['#33ce12','#ffcd56','#ff6384','#36a2eb']
+              }],
+              labels:  materialG,
+              /*labels: []*/
+          };
+
+         // chart3.data=pieDataW;
+          chart1.data=pieData;
+          chart2.data=pieDataCI;
+          chart22.data=pieDataYO;
+          chart3.data=pieDataW;
+          chart4.data=pieDataU;
+          chart5.data=pieDataWO;
+          chart6.data=pieDataG;
+          ctx1 = $("#myPieChartYI");
+          ctx2 = $("#myPieChartCI");
+          ctx22 = $("#myPieChartYO");
+          ctx3 = $("#myPieChartWB");
+          ctx4 = $("#myPieChartU");
+          ctx5 = $("#myPieChartWO");
+         ctx6 = $("#myPieChartGI");
+        chart1.update();
+        chart2.update();
+        chart22.update();
+
+        chart3.update();
+
+        chart4.update();        //chart.data=pieData;
+        chart5.update();        //chart.data=pieData;
+        chart6.update();  
+       
+        $("#myPieChartYI").click(
+       
+                function(evt){
+                debugger
+                    tagtable2.clear();
+                    var activePoints = chart1.getElementAtEvent(evt)[0];
+                    var d = activePoints._model.label;
+                    console.log(d);
+                    var json = {
+            "plant_id": "21",
+            "material_types_name_group": d,
+            "mstage_id": stageyid,
+            };
+                    tabData(json);
+                         
+                }
+            );
+        $("#myPieChartCI").click(
+                function(evt){
+                debugger
+                    tagtable2.clear();
+                    var activePoints = chart2.getElementAtEvent(evt)[0];
+                    var d = activePoints._model.label;
+                    console.log(d);
+                    var json = {
+            "plant_id": "21",
+            "material_types_name_group": d,
+            "mstage_id": stageciid,
+            };
+                    tabData(json);
+                }
+        );
+        
+        $("#myPieChartYO").click(
+                function(evt){
+                debugger
+                    tagtable2.clear();
+                    var activePoints = chart22.getElementAtEvent(evt)[0];
+                    var d = activePoints._model.label;
+                    console.log(d);
+                    var json = {
+            "plant_id": "21",
+            "material_types_name_group": d,
+            "mstage_id": stageyoid,
+            };
+                    tabData(json);
+                }
+        );
+        $("#myPieChartWB").click(
+                function(evt){
+                debugger
+                    tagtable2.clear();
+                    var activePoints = chart3.getElementAtEvent(evt)[0];
+                    var d = activePoints._model.label;
+                    console.log(d);
+                    var json = {
+            "plant_id": "21",
+            "material_types_name_group": d,
+            "mstage_id": stagewbid,
+            };
+                    tabData(json);
+                }
+        );
+       
+        $("#myPieChartUN").click(
+                function(evt){
+                debugger
+                    tagtable2.clear();
+                    var activePoints = chart4.getElementAtEvent(evt)[0];
+                    var d = activePoints._model.label;
+                    console.log(d);
+                    var json = {
+            "plant_id": "21",
+            "material_types_name_group": d,
+            "mstage_id": stageunid,
+            };
+                    tabData(json);
+                }
+        );
+        $("#myPieChartWO").click(
+                function(evt){
+                debugger
+                    tagtable2.clear();
+                    var activePoints = chart5.getElementAtEvent(evt)[0];
+                    var d = activePoints._model.label;
+                    console.log(d);
+                    var json = {
+            "plant_id": "21",
+            "material_types_name_group": d,
+            "mstage_id": stagewoid,
+            };
+                    tabData(json);
+                }
+        );
+        $("#myPieChartGI").click(
+                function(evt){
+                debugger
+                    tagtable2.clear();
+                    var activePoints = chart6.getElementAtEvent(evt)[0];
+                    var d = activePoints._model.label;
+                    console.log(d);
+                    var json = {
+            "plant_id": "21",
+            "material_types_name_group": d,
+            "mstage_id": stagegiid,
+            };
+                    tabData(json);
+                }
+        );
+       
+       
+        function tabData(jsn){
+        tagtable2.clear();
+        var datay = callajaxasJson("<%=GlobalUrl.getrawMaterials360DrillDownReport%>",jsn);
+             //$('#graph2').hide('slow');
+             // $('#table2').show();
+             $('#doughnut1').modal('show');
+            // if(d == "Approved Vehicle"){
+                 tagtable2.clear();
+                 //console.log(table1data2);
+                 for (var i = 0; i < datay.length; i++)
+                 {
+                     // console.log(table1data2);
+                        tagtable2.row.add([
+                    datay[i].mpo_po_number,
+                     datay[i].supplier_code,
+                     datay[i].code,
+                     datay[i].source_of_rmat,
+                     datay[i].number,
+                      datay[i].trip_id,
+                     datay[i].yard_in_time,
+                     datay[i].check_in_date,
+                     datay[i].ge_number,
+                     datay[i].gatein_time,
+                     datay[i].gross_weight_time,
+                     datay[i].unloading_time,
+                      datay[i].tare_weight_time,
+                     datay[i].gross_weight,
+                     datay[i].tare_weight,
+                    datay[i].gate_out_time,
+                     datay[i].net_weight
+                     ]);
+                 }
+                 tagtable2.draw();
+                 $("#tbody1").show();
+           
+        }
+     
+    }
+
+
+
+
+
+
+
+
+
+    function callajaxasJson(url,json)
+    {
+        var response="";
+        $.ajax(
+            {
+                url :url,
+                async:false,
+                type: "POST",
+                data:  JSON.stringify(json),
+                dataType:'json',
+                contentType: "application/json",
+                success: function (result) {
+                    response = result;
+                }
+
+
+            });
+        return response;
+    }
+
+
+
+         function callajaxAsParamData(url,data)
+       {   
+        var response = "";
+        $.ajax(
+            {
+                url :url,
+                async:false,
+                type: "POST",
+                data:  data,
+                dataType:'json',
+                success: function (result) {
+                    response = result;
+                }
+
+
+            });
+        return response;
+    }
+
+</script>

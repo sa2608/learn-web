@@ -1,0 +1,67 @@
+HTML : hypertext markup language , it has collections of predefined tags. HTML use to design basic structure of webpage.
+       TAGS ?
+	   <> : open tags (start)
+	   </> : close tags (end)
+	   
+	   ------------------------------------------------------------------------------------------------------------------
+	   
+	   html (tags)
+	   css (selector)
+	   js (element)
+	   jquery (control)
+	   angular(directive)
+	   ------------------------------------------------------------------------------------------------------------------
+	   
+	   1. the tag open 1st should get close in the last
+	   2. the open in last, should get close 1st.
+	   ------------------------------------------------------------------------------------------------------------------
+	   
+	   what is the structure of html file/document ?
+	   ------------------------------------------------------------------------------------------------------------------
+	   
+	   input : those tags use to ask input from user
+	   output : those tags, use to display output to user.
+	   block level: those tags, that print the statement in next line
+	   inline: those tags, that prin statement in same line.
+	   dependent : those tags, where it has to open and close.
+	   independent: those tags has only open, close optional.
+	  -------------------------------------------------------------------------------------------------------------------
+	  
+	  H1 to H6 : use to create heading of blocks and pages in web application.
+	  p : to display text data more than 130 character
+	  label : to display the text data max 130 character.
+	  span : can be use for multipurspose using css.
+	  hr : seperator(to break the line) with visible line.
+	  br : seperator(to break the line) with no visible line.
+	  div : use to divide html body into multiple blocks.
+	  
+	  Using how many methids html body can be divided into the multiple blocks
+	  OR
+	  Using which tag , design different layout of webpage
+	  
+	  table-> before multi media mobile phone
+	  frameset-> before multi media mobile phone.
+	  div + css = bootstrap => since multi media mobile came in market
+	  --------------------------------------------------------------------------------------------------------------------
+	<a href="finame" target="" title="title of link">Text,</a>
+	--> target : the location of file to be open
+	types of target
+	-----in html-----
+	1. _self : the next page open in same window
+	2. _new  : it open new tab, but only 1 click
+	3. _blank : it open new tab, but every click
+
+	------ in Java Script, jquery----
+	4. _parent
+	5. _child
+	-----In FrameSet-----
+	6. top   : it connect to master page
+	7. userdefined: According to project requirements, developer will define it.
+	------------------------------------------------------------------------------------------------------------------------------
+	cellpadding : to apply space inside of cell (th,td)
+	cellspacing : to apply space outside of cell (td,th)
+
+
+
+
+

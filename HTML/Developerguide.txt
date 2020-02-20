@@ -1,0 +1,20 @@
+List of property & values
+    placeholder:to notify to user for input guidance
+	name:use to create a dynamic variable, and to capture the user input,after it pass to server side language(used in synchronous call between client and server).
+	action:It set the name of file as server side processing language,to receive data from frontend.
+	
+	Method: GET/POST, use to set security level for user input.
+		    GET:it is based on xml and xml is unsecure so user input will be unsecure.
+			POST:it is based on JSON ans JSON has full security so user input will be always secure.
+			------------------------------------------------------------------
+			
+		html
+		   name---------------------------------------->php
+		   id--------------------------------------->Css,Js,Jquery
+		   Class----------------------------------->Css,Js,Jquery
+		   Size----------------------------------->To resize the width
+		   maxlength------------------------------->To set input limit of input box
+		   tabindex-------------------------------->To set sequence of cursor
+		   Value------------------------------------->To set default value
+		   readonly---------------------------------->To make input box readable(no input,exist)
+		   disabled--------------------------------->To make input box full disable.(no input,no exist)

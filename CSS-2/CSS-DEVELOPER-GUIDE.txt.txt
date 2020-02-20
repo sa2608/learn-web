@@ -1,0 +1,101 @@
+html has collectons of pre -defined tags with limited property and values.
+ syntax
+   <div property="value"></div>
+ Example
+   <div bgclor"red"></div>
+ Note: before=is property
+       after=is value
+ Css:it has collections of only property and values
+
+ professional webpage=html(tag)+css(property+values)
+ 
+ Example:
+  <div style="property:value; property:value;"></div>
+
+ Note: before: is property
+       after: is value
+	   --------------------------------------------------------------------------------------------------------------
+	   Using How many methods html (tags) +css (property & values) can be combined
+	   Types of Css ?
+	     . INLINE(less in use)
+		 . INTERNAL(less in user)
+		 .EXTERNAL(90%+ in user) 90% adv,10% dis
+		 .IMPORT(less in user)  90% disav,10%
+		 ---------------------------------------------------------------------------------------------------------------------
+		 html property can be extended using CSS property and values.
+		 In html tags are pre defined.
+		 In Css properties are pre defined+10% values are predefined+90% values are user defined.
+		 ------------------------------------------------------------------------------------------------
+	LIST OF PROPERTIES AND VALUES:
+	      height(3 ways)  height
+						  min-height 
+						  height:auto
+						  
+		  width(3 ways)   width:
+						  min-width:
+						  max-width:
+						  
+		  background      
+		                  background:
+						  background-color:many color
+						  background-color:one color
+						  background-image:image
+						  background-image:custom image
+	------------------------------------------------------------------------------------------------------------------------------------		  
+	                float:right // Move the text/block from right to left.
+					float:left // Move the text/block from left to right.
+					---------------------------------------------------------------------------------------------------------------
+			1. Those tags that contains multi line data(float:left,right)
+			2. Those tags that contains single line data(display:INLINE/BLOCK)
+			------------------------------------------------------------------------------------------------------------------------
+			label tag is use to display text data but between 1-130 characters if more than 130 characters use p tag.
+			--------------------------------------------------------------------------------------------------------------
+			margin:to apply gap from respective side
+			margin:auto;to align in center of present area
+			margin:20px;to gap of 20px from all sides
+			margin-left:20px;to apply gap of 20 px from left side
+			margin-right:20px;to apply gap of 20 px from right side
+			margin-top:20px;to apply gap of 20 px from top side
+			margin-bottom:20px;to apply gap of 20 px from bottom side
+			
+			Note:margin:-20px is possible/not possible
+			     margin-left:-20px is possible
+				 margin-right:-20px is possible
+				 margin-bottom:-20px is possible
+				 margin-top:-20px is possible
+				 
+				 By default in body tag we have a margin of 8px.
+				 -------------------------------------------------------------------------------------------------------
+				 Padding:to apply gap INSIDE OF CONTAINER.
+				  padding:20px;to apply gap of 20px from allside inside block
+				  padding-top:20px;only for top
+				  padding-left:20px;only for left
+				  padding-right:20px;only for right
+				  padding-bottom:20px;only for bottom
+                     
+
+                Note:
+                padding:-20px;
+                padding-top:-20px;
+				padding-left:20px;
+				  padding-right:20px;
+				  padding-bottom:20px
+				  ------------------------------------------------------------------------
+				  Negative impact of float property:Index problem not in same level all elements.To overlap.
+				  Solution
+				  clear:both;creates a separator for the z-index or betn two elements to overlap with each other.
+				  -----------------------------------------------------------------------------------------------
+				  Internal Css:internal css is one to many(css code 1 time and call in html many times)
+				     Note:to make 1 to many css has given following methods
+					    1.CSS By TAG NAME(VERY LESS IN USE)
+						2.CSS BY ID(AVERAGE IN USE)
+						   -->in 1 page/document if 1 type of tag used many time but structure is not same.
+						3.CSS BY CLASS(90%+IN USE)
+						   -->in 1 page/document if 1 type of tag used many times but structure is same.
+						4.CSS BY TAG GROUP(VERY LESS IN USE)
+						   -->in 1 page many type of tag used but same structure.
+						5.CSS BY PARENT & CHILD TAG(VERY LESS IN USE)
+				---------------------------------------------------------------------------------------------------------------------
+               		difference between external and import css:-
+					  in external css we can click on the hyperlink directly and view the page source directly but it is fast due to link rel tag.
+					  in import css to view the code we have to provide the path of css file in the url.
