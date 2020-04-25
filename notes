@@ -1,12 +1,13 @@
 
 git push -f origin master
 
-
+git push -u
 git pull origin master
 =============================
 
 1st Time
 
 git init
-git commit
+git commit -m "first commit"     //to put comments use -m
 git remote add origin "https://github.com/baibhavkumarcode/learn-web.git"
+git add . //
